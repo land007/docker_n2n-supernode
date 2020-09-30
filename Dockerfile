@@ -15,4 +15,4 @@ RUN echo "supernode -l 30151 -f -v &" >> /start.sh && \
 
 #docker build -t land007/n2n-supernode:latest .
 #> docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t land007/n2n-supernode:latest --push .
-#docker rm -f n2n-supernode ; docker run -it --privileged --network host --restart=always -p 30151:30151/udp --log-opt max-size=1m --log-opt max-file=1 --name n2n-supernode land007/n2n-supernode:latest
+#docker rm -f n2n-supernode ; docker run -it --privileged --network host --restart=always -p 30151:30151/udp --log-opt max-size=1m --log-opt max-file=1 -e "IP=192.168.11.110" --name n2n-supernode land007/n2n-supernode:latest
